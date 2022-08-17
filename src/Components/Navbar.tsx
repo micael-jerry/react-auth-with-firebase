@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 const Navbar: React.FC<{}> = (props) => {
     return (
-        <nav className={"navbar navbar-dark bg-dark px-4"}>
+        <nav className={"navbar position-fixed top-0 vw-100 navbar-dark bg-dark px-4"}>
             <Link to={"/"} className={"navbar-brand"}>Navbar</Link>
             <div>
                 <button className={"btn btn-secondary"}>Sign Up</button>

@@ -1,6 +1,6 @@
 import React from "react";
-import logo from '../logo.svg'
-import '../App.css'
+import logo from '../../logo.svg'
+import './Home.css'
 
 const Home: React.FC<{}> = (props) => {
     return (
@@ -9,7 +9,7 @@ const Home: React.FC<{}> = (props) => {
         // </div>
         <div className="App">
             <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo"/>
+                {/*<img src={logo} className="App-logo" alt="logo"/>*/}
                 <p>
                     Authentication using <code>Firebase Auth</code> and <code>React</code>
                 </p>
