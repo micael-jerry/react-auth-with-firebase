@@ -1,14 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Route, Routes} from "react-router-dom";
 import Home from "./Components/home/Home";
 import Navbar from "./Components/Navbar";
-import SignUp from "./Components/modal/SignUp";
+import Modal from "./Components/modal/Modal";
+import {typeModalState} from "./types";
 
-function App() {
+const App: React.FC = () => {
+    const [modalState, setModalState] = useState<typeModalState>({
+        signUpModalState: false,
+        singInModalState: false
+    });
     return (
         <>
-            <Navbar/>
-            <SignUp/>
+            <Modal modalState={modalState} changeModalState={setModalState}/>
+            <Navbar changeModalState={setModalState}/>
             <Routes>
                 <Route path={"/"} element={<Home/>}></Route>
             </Routes>
