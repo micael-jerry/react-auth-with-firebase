@@ -11,7 +11,7 @@ const Home: React.FC<{ currentUser: any }> = (props) => {
                     currentUser ? (
                         <>
                             <p>Authentication using <code>Firebase Auth</code> and <code>React</code></p>
-                            <p>VOUS ETES CONNECTEZ</p>
+                            <p>VOUS ETES CONNECTEZ EN TANT QUE <code>{currentUser.email}</code></p>
                         </>
                     ) : (
                         <p>

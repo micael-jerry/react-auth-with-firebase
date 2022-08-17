@@ -12,10 +12,16 @@ export type typeInputSignUp = {
     "signUpPasswordR": string
 }
 
+export type typeInputSignIn = {
+    "signInEmail": string,
+    "signInPassword": string
+}
+
 export type typeModalProps = {
     modalState: typeModalState,
     changeModalState: (modalState: typeModalState) => any,
-    signUp: typeSignUp
+    signUp: typeSign,
+    signIn: typeSign
 }
 
-export type  typeSignUp = (email: string, password: string) =>  any
+export type  typeSign = (email: string, password: string) => any

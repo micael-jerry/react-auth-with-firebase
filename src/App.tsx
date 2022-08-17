@@ -4,11 +4,10 @@ import Home from "./Components/home/Home";
 import Navbar from "./Components/NavBar/Navbar";
 import Modal from "./Components/modal/Modal";
 import {typeModalState} from "./types";
-import {createUserWithEmailAndPassword, onAuthStateChanged} from 'firebase/auth';
+import {createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword} from 'firebase/auth';
 import {auth} from "./firebase-config";
 import Private from "./Components/pages/private/Private";
 import PrivateHome from "./Components/pages/private/privateHome/PrivateHome";
-import firebase from "firebase/compat";
 
 const App: React.FC = () => {
     const [modalState, setModalState] = useState<typeModalState>({
@@ -16,10 +15,12 @@ const App: React.FC = () => {
         singInModalState: false
     });
 
-    const signUp = (email: string, password: string) => createUserWithEmailAndPassword(auth, email, password);
-
     const [currentUser, setCurrentUser] = useState<any>();
     const [loadingData, setLoadingData] = useState<boolean>(true);
+
+    const signUp = (email: string, password: string) => createUserWithEmailAndPassword(auth, email, password);
+
+    const signIn = (email: string, password: string) => signInWithEmailAndPassword(auth, email, password);
 
     useEffect(() => {
         return onAuthStateChanged(auth, (currentUser) => {
@@ -32,7 +33,7 @@ const App: React.FC = () => {
         <>
             {!loadingData && (
                 <>
-                    <Modal modalState={modalState} changeModalState={setModalState} signUp={signUp}/>
+                    <Modal modalState={modalState} changeModalState={setModalState} signUp={signUp} signIn={signIn}/>
                     <Navbar changeModalState={setModalState}/>
                     <Routes>
                         <Route path={"/"} element={<Home currentUser={currentUser} />}></Route>
