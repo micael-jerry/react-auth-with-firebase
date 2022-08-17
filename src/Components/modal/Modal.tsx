@@ -1,9 +1,9 @@
 import React from "react";
 import SignUpModal from "./SingUpModal/SignUpModal";
-import {typeModalState} from "../../types";
+import {typeModalProps} from "../../types";
 
-const Modal: React.FC<{ modalState: typeModalState, changeModalState: (modalState: typeModalState) => any }> = (props) => {
-    const {modalState, changeModalState} = props;
+const Modal: React.FC<typeModalProps> = (props) => {
+    const {modalState, changeModalState, signUp} = props;
 
     const disableModal = (): void => {
         changeModalState({
@@ -14,7 +14,7 @@ const Modal: React.FC<{ modalState: typeModalState, changeModalState: (modalStat
     return (
         <>
             {modalState.signUpModalState && (
-                <SignUpModal disableModal={disableModal}/>
+                <SignUpModal disableModal={disableModal} signUp={signUp}/>
             )}
         </>
     )
