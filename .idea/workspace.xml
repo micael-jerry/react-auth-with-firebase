@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9fd661f6-bd2b-4e10-a7fa-99b86aeb18ce" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/firebase-config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Home.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Navbar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/modal/SignUp.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +22,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -38,7 +44,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/mick-j-06/Bureau/react-auth/public",
+    "last_opened_file_path": "/home/mick-j-06/Bureau/react-auth/src",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -50,6 +56,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/public" />
     </key>
   </component>
@@ -64,7 +71,7 @@
       <workItem from="1660719295386" duration="56000" />
       <workItem from="1660719390182" duration="976000" />
       <workItem from="1660720578320" duration="670000" />
-      <workItem from="1660721942765" duration="1354000" />
+      <workItem from="1660721942765" duration="4083000" />
     </task>
     <servers />
   </component>
