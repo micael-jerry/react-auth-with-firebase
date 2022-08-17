@@ -11,6 +11,7 @@ const Modal: React.FC<typeModalProps> = (props) => {
             singInModalState: false
         })
     }
+
     return (
         <>
             {modalState.signUpModalState && (

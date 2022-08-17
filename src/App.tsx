@@ -1,15 +1,14 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Route, Routes} from "react-router-dom";
 import Home from "./Components/home/Home";
-import Navbar from "./Components/Navbar";
+import Navbar from "./Components/NavBar/Navbar";
 import Modal from "./Components/modal/Modal";
 import {typeModalState} from "./types";
-import {
-    signInWithEmailAndPassword,
-    createUserWithEmailAndPassword,
-    onAuthStateChanged
-} from 'firebase/auth' ;
+import {createUserWithEmailAndPassword, onAuthStateChanged} from 'firebase/auth';
 import {auth} from "./firebase-config";
+import Private from "./Components/pages/private/Private";
+import PrivateHome from "./Components/pages/private/privateHome/PrivateHome";
+import firebase from "firebase/compat";
 
 const App: React.FC = () => {
     const [modalState, setModalState] = useState<typeModalState>({
@@ -17,17 +16,32 @@ const App: React.FC = () => {
         singInModalState: false
     });
 
-    const [currentUser, setCurrentUser] = useState<any>();
+    const signUp = (email: string, password: string) => createUserWithEmailAndPassword(auth, email, password);
 
-    const signUp = (email: string, password: string) => createUserWithEmailAndPassword(auth, email, password)
+    const [currentUser, setCurrentUser] = useState<any>();
+    const [loadingData, setLoadingData] = useState<boolean>(true);
+
+    useEffect(() => {
+        return onAuthStateChanged(auth, (currentUser) => {
+            setCurrentUser(currentUser);
+            setLoadingData(false);
+        });
+    }, [])
 
     return (
         <>
-            <Modal modalState={modalState} changeModalState={setModalState} signUp={signUp}/>
-            <Navbar changeModalState={setModalState}/>
-            <Routes>
-                <Route path={"/"} element={<Home/>}></Route>
-            </Routes>
+            {!loadingData && (
+                <>
+                    <Modal modalState={modalState} changeModalState={setModalState} signUp={signUp}/>
+                    <Navbar changeModalState={setModalState}/>
+                    <Routes>
+                        <Route path={"/"} element={<Home currentUser={currentUser} />}></Route>
+                        <Route path={"/private"} element={<Private currentUser={currentUser}/>}>
+                            <Route path={"/private/private-home"} element={<PrivateHome/>}></Route>
+                        </Route>
+                    </Routes>
+                </>
+            )}
         </>
     );
 }

@@ -2,17 +2,24 @@ import React from "react";
 import logo from '../../logo.svg'
 import './Home.css'
 
-const Home: React.FC<{}> = (props) => {
+const Home: React.FC<{ currentUser: any }> = (props) => {
+    const {currentUser} = props;
     return (
-        // <div className={"container p-5"}>
-        //     <h1 className={"display-2"}>Sign up or Sign in</h1>
-        // </div>
         <div className="App">
             <header className="App-header">
-                {/*<img src={logo} className="App-logo" alt="logo"/>*/}
-                <p>
-                    Authentication using <code>Firebase Auth</code> and <code>React</code>
-                </p>
+                {
+                    currentUser ? (
+                        <>
+                            <p>Authentication using <code>Firebase Auth</code> and <code>React</code></p>
+                            <p>VOUS ETES CONNECTEZ</p>
+                        </>
+                    ) : (
+                        <p>
+                            Authentication using <code>Firebase Auth</code> and <code>React</code>
+                            <p>VEILLEZ VOUS CONNECTEZ OU CREE UN COMPTE</p>
+                        </p>
+                    )
+                }
                 <a
                     className="App-link"
                     href="https://reactjs.org"

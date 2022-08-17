@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import './SignUpModal.css'
 import {typeInputSignUp, typeSignUp} from "../../../types";
+import {useNavigate} from "react-router-dom";
 
 const SignUpModal: React.FC<{ disableModal: () => void, signUp: typeSignUp }> = (props) => {
     const {disableModal, signUp} = props;
@@ -11,6 +12,8 @@ const SignUpModal: React.FC<{ disableModal: () => void, signUp: typeSignUp }> = 
     });
 
     const [validation, setValidation] = useState<String>("");
+
+    const navigate = useNavigate();
 
     const inputChangeValue = (event: any): void => {
         let key = event.target.id;
@@ -57,7 +60,8 @@ const SignUpModal: React.FC<{ disableModal: () => void, signUp: typeSignUp }> = 
                 "signUpPasswordR": ""
             })
             setValidation("");
-            console.log(cred)
+            navigate("/private/private-home");
+            disableModal();
         } catch (err: any) {
             setValidation(err.code);
         }

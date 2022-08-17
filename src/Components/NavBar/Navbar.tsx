@@ -1,9 +1,22 @@
 import React from "react";
-import {Link} from "react-router-dom";
-import {typeModalState} from "../types";
+import {Link, useNavigate} from "react-router-dom";
+import {typeModalState} from "../../types";
+import {auth} from "../../firebase-config";
+import {signOut} from 'firebase/auth';
 
 const Navbar: React.FC<{ changeModalState: (param: typeModalState) => any }> = (props) => {
     const {changeModalState} = props;
+
+    const navigate = useNavigate();
+
+    const logOut = async () => {
+        try {
+            await signOut(auth);
+            navigate("/")
+        } catch (err) {
+            alert(err);
+        }
+    }
     const changeModal = (modal: string): void => {
         switch (modal) {
             case 'singIn' : {
@@ -43,7 +56,7 @@ const Navbar: React.FC<{ changeModalState: (param: typeModalState) => any }> = (
                 }}>Sign In
                 </button>
                 <button className={"btn btn-secondary ms-3"} onClick={() => {
-                    changeModal("logOut")
+                    logOut()
                 }}>Log Out
                 </button>
             </div>
