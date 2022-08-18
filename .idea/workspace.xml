@@ -5,9 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9fd661f6-bd2b-4e10-a7fa-99b86aeb18ce" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Components/ButtonSignIn/Facebook.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/ButtonSignIn/Github.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/ButtonSignIn/Google.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/firebase/authentification.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/firebase/method.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/home/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/NavBar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/NavBar/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/modal/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/modal/Modal.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/modal/SignInModal/SignInModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/modal/SignInModal/SignInModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/firebase-config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/firebase/firebase-config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,9 +26,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
-        <option value="TypeScript JSX File" />
         <option value="CSS File" />
+        <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -58,11 +67,11 @@
       <recent name="$PROJECT_DIR$/public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/firebase" />
       <recent name="$PROJECT_DIR$/src/Components/NavBar" />
       <recent name="$PROJECT_DIR$/src/Components/pages/private/privateHome" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src/Components/modal/SingUpModal" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -80,6 +89,9 @@
       <workItem from="1660735946257" duration="7692000" />
       <workItem from="1660746274259" duration="11267000" />
       <workItem from="1660801662717" duration="1852000" />
+      <workItem from="1660822539193" duration="661000" />
+      <workItem from="1660828211937" duration="5571000" />
+      <workItem from="1660836444491" duration="4028000" />
     </task>
     <servers />
   </component>

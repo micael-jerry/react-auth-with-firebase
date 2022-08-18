@@ -1,7 +1,7 @@
 import React from "react";
 import {Link, useNavigate} from "react-router-dom";
 import {typeModalState} from "../../types";
-import {auth} from "../../firebase-config";
+import {auth} from "../../firebase/firebase-config";
 import {signOut} from 'firebase/auth';
 
 const Navbar: React.FC<{ changeModalState: (param: typeModalState) => any }> = (props) => {

@@ -4,7 +4,7 @@ import {typeModalProps} from "../../types";
 import SignInModal from "./SignInModal/SignInModal";
 
 const Modal: React.FC<typeModalProps> = (props) => {
-    const {modalState, changeModalState, signUp, signIn} = props;
+    const {modalState, changeModalState, signUp, signIn, setCurrentUser, currentUser} = props;
 
     const disableModal = (): void => {
         changeModalState({
@@ -20,7 +20,7 @@ const Modal: React.FC<typeModalProps> = (props) => {
             )}
             {
                 modalState.singInModalState && (
-                    <SignInModal disableModal={disableModal} signIn={signIn}/>
+                    <SignInModal disableModal={disableModal} signIn={signIn} setCurrentUser={setCurrentUser} />
                 )
             }
         </>

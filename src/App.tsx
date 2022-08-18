@@ -5,7 +5,7 @@ import Navbar from "./Components/NavBar/Navbar";
 import Modal from "./Components/modal/Modal";
 import {typeModalState} from "./types";
 import {createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword} from 'firebase/auth';
-import {auth} from "./firebase-config";
+import {auth} from "./firebase/firebase-config";
 import Private from "./Components/pages/private/Private";
 import PrivateHome from "./Components/pages/private/privateHome/PrivateHome";
 
@@ -33,7 +33,7 @@ const App: React.FC = () => {
         <>
             {!loadingData && (
                 <>
-                    <Modal modalState={modalState} changeModalState={setModalState} signUp={signUp} signIn={signIn}/>
+                    <Modal modalState={modalState} changeModalState={setModalState} signUp={signUp} signIn={signIn} currentUser={currentUser} setCurrentUser={setCurrentUser} />
                     <Navbar changeModalState={setModalState}/>
                     <Routes>
                         <Route path={"/"} element={<Home currentUser={currentUser} />}></Route>

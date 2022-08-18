@@ -21,7 +21,9 @@ export type typeModalProps = {
     modalState: typeModalState,
     changeModalState: (modalState: typeModalState) => any,
     signUp: typeSign,
-    signIn: typeSign
+    signIn: typeSign,
+    currentUser: any,
+    setCurrentUser: any
 }
 
 export type  typeSign = (email: string, password: string) => any

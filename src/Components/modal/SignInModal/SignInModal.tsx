@@ -2,9 +2,12 @@ import React, {useState} from "react";
 import './SignInModal.css';
 import {typeInputSignIn, typeSign} from "../../../types";
 import {useNavigate} from "react-router-dom";
+import Google from "../../ButtonSignIn/Google";
+import Facebook from "../../ButtonSignIn/Facebook";
+import Github from "../../ButtonSignIn/Github";
 
-const SignInModal: React.FC<{ disableModal: () => void, signIn: typeSign }> = (props) => {
-    const {disableModal, signIn} = props;
+const SignInModal: React.FC<{ disableModal: () => void, signIn: typeSign,setCurrentUser:any }> = (props) => {
+    const {disableModal, signIn, setCurrentUser} = props;
     const [inputValue, setValueInput] = useState<typeInputSignIn>({
         "signInEmail": "",
         "signInPassword": ""
@@ -92,6 +95,9 @@ const SignInModal: React.FC<{ disableModal: () => void, signIn: typeSign }> = (p
                                         <i className={"text-danger mt-1"}>{validation}</i>
                                     </div>
                                     <button className={"btn btn-primary"}>Sign In</button>
+                                    <Google setCurrentUser={setCurrentUser} disableModal={disableModal}/>
+                                    <Facebook setCurrentUser={setCurrentUser} disableModal={disableModal}/>
+                                    <Github setCurrentUser={setCurrentUser} disableModal={disableModal}/>
                                 </form>
                             </div>
                         </div>
