@@ -38,7 +38,7 @@ const SignInModal: React.FC<{ disableModal: () => void, signIn: typeSign }> = (p
         event.preventDefault()
 
         try {
-            const cred = await signIn(inputValue.signInEmail, inputValue.signInPassword);
+            await signIn(inputValue.signInEmail, inputValue.signInPassword);
             setValueInput({
                 "signInEmail": "",
                 "signInPassword": ""
