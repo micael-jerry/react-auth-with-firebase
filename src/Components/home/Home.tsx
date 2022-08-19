@@ -18,9 +18,9 @@ const Home: React.FC<{ currentUser: any }> = (props) => {
                 }
                 {
                     !currentUser ? (
-                        <button className={"btn btn-light btn-lg"} disabled>Private Home</button>
+                        <button className={"btn btn-outline-light btn-lg"} disabled>Private Home</button>
                     ) : (
-                        <button className={"btn btn-light btn-lg"} onClick={() => {
+                        <button className={"btn btn-outline-light btn-lg"} onClick={() => {
                             navigate("/private/private-home");
                         }}>Private Home</button>
                     )

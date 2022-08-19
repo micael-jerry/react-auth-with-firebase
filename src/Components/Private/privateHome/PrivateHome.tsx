@@ -8,7 +8,7 @@ function PrivateHome() {
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo"/>
                 <p>
-                    Edit <code>src/PrivateHome.tsx</code> and save to reload.
+                    Home Sweet Private
                 </p>
             </header>
         </div>

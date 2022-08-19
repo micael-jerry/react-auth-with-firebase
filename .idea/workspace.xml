@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9fd661f6-bd2b-4e10-a7fa-99b86aeb18ce" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ButtonSignIn/ButtonSignIn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ButtonSignIn/ButtonSignIn.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/firebase/authentification.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/firebase/authentification.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/firebase/method.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/firebase/providers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/home/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +82,7 @@
       <workItem from="1660822539193" duration="661000" />
       <workItem from="1660828211937" duration="5571000" />
       <workItem from="1660836444491" duration="10912000" />
-      <workItem from="1660880267333" duration="10240000" />
+      <workItem from="1660880267333" duration="10831000" />
     </task>
     <servers />
   </component>
