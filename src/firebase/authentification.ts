@@ -8,8 +8,8 @@ const signInWithProvider = (provider: FacebookAuthProvider | GoogleAuthProvider 
             return res.user;
         })
         .catch((err) => {
-            alert("ERROR signInWithPopup");
-            return err;
+            console.log(err)
+            return null;
         })
 }
 
