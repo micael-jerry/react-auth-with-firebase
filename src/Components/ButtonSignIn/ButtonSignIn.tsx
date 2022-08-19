@@ -1,12 +1,12 @@
 import React from "react";
 import {FacebookAuthProvider, GithubAuthProvider, GoogleAuthProvider} from "firebase/auth";
-import socialMediaAuth from "../../firebase/authentification";
-import {facebookProvider, githubProvider, googleProvider} from "../../firebase/method";
+import signInWithProvider from "../../firebase/authentification";
+import {facebookProvider, githubProvider, googleProvider} from "../../firebase/providers";
 
 const ButtonSignIn:React.FC<{disableModal: () => void,setCurrentUser:any }> = (props) => {
     const {disableModal,setCurrentUser} = props;
     const handleClick = async (provider: GoogleAuthProvider | FacebookAuthProvider | GithubAuthProvider) => {
-        const res = await socialMediaAuth(provider);
+        const res = await signInWithProvider(provider);
         await setCurrentUser(res);
         await disableModal();
     }
