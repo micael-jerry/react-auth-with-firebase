@@ -1,9 +1,7 @@
 import React, {useState} from "react";
 import './SignInModal.css';
 import {typeInputSignIn, typeSign} from "../../../types";
-import Google from "../../ButtonSignIn/Google";
-import Facebook from "../../ButtonSignIn/Facebook";
-import Github from "../../ButtonSignIn/Github";
+import ButtonSignIn from "../../ButtonSignIn/ButtonSignIn";
 
 const SignInModal: React.FC<{ disableModal: () => void, signIn: typeSign,setCurrentUser:any }> = (props) => {
     const {disableModal, signIn, setCurrentUser} = props;
@@ -90,11 +88,14 @@ const SignInModal: React.FC<{ disableModal: () => void, signIn: typeSign,setCurr
                                         />
                                         <i className={"text-danger mt-1"}>{validation}</i>
                                     </div>
-                                    <button className={"btn btn-primary"}>Sign In</button>
-                                    <Google setCurrentUser={setCurrentUser} disableModal={disableModal}/>
-                                    <Facebook setCurrentUser={setCurrentUser} disableModal={disableModal}/>
-                                    <Github setCurrentUser={setCurrentUser} disableModal={disableModal}/>
+                                    <div className={"d-flex justify-content-center align-items-center mb-2 mt-2"}>
+                                        <button className={"btn btn-primary"}>Sign In with email and password</button>
+                                    </div>
                                 </form>
+                                <div className={"text-md-center mt-4"}>
+                                    <p className={"mb-0"}>Or Sing In with</p>
+                                    <ButtonSignIn disableModal={disableModal} setCurrentUser={setCurrentUser}/>
+                                </div>
                             </div>
                         </div>
                     </div>

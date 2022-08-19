@@ -16,7 +16,7 @@ const Modal: React.FC<typeModalProps> = (props) => {
     return (
         <>
             {modalState.signUpModalState && (
-                <SignUpModal disableModal={disableModal} signUp={signUp}/>
+                <SignUpModal disableModal={disableModal} signUp={signUp} setCurrentUser={setCurrentUser}/>
             )}
             {
                 modalState.singInModalState && (

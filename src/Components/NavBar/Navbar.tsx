@@ -47,18 +47,18 @@ const Navbar: React.FC<{ changeModalState: (param: typeModalState) => any, curre
                 {
                     !currentUser ? (
                         <>
-                            <button className={"btn btn-secondary"} onClick={() => {
+                            <button className={"btn btn-outline-light"} onClick={() => {
                                 changeModal("singUp")
                             }}>Sign Up
                             </button>
-                            <button className={"btn btn-secondary ms-3"} onClick={() => {
+                            <button className={"btn btn-outline-light ms-3"} onClick={() => {
                                 changeModal("singIn")
                             }}>Sign In
                             </button>
                         </>
                     ) : (
                         <>
-                            <button className={"btn btn-secondary ms-3"} onClick={() => {
+                            <button className={"btn btn-outline-danger ms-3"} onClick={() => {
                                 logOut()
                             }}>Log Out
                             </button>

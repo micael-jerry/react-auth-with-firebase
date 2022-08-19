@@ -1,9 +1,10 @@
 import React, {useState} from "react";
 import './SignUpModal.css'
 import {typeInputSignUp, typeSign} from "../../../types";
+import ButtonSignIn from "../../ButtonSignIn/ButtonSignIn";
 
-const SignUpModal: React.FC<{ disableModal: () => void, signUp: typeSign }> = (props) => {
-    const {disableModal, signUp} = props;
+const SignUpModal: React.FC<{ disableModal: () => void, signUp: typeSign,setCurrentUser:any }> = (props) => {
+    const {disableModal, signUp,setCurrentUser} = props;
     const [inputValue, setValueInput] = useState<typeInputSignUp>({
         "signUpEmail": "",
         "signUpPassword": "",
@@ -113,8 +114,14 @@ const SignUpModal: React.FC<{ disableModal: () => void, signUp: typeSign }> = (p
                                         />
                                         <i className={"text-danger mt-1"}>{validation}</i>
                                     </div>
-                                    <button className={"btn btn-primary"}>Sign Up</button>
+                                    <div className={"d-flex justify-content-center align-items-center mb-2 mt-2"}>
+                                        <button className={"btn btn-primary"}>Sign Up with email and password</button>
+                                    </div>
                                 </form>
+                                <div className={"text-md-center mt-4"}>
+                                    <p className={"mb-0"}>Or Sing In with</p>
+                                    <ButtonSignIn disableModal={disableModal} setCurrentUser={setCurrentUser}/>
+                                </div>
                             </div>
                         </div>
                     </div>
