@@ -4,7 +4,7 @@ import {typeModalProps} from "../../types";
 import SignInModal from "./SignInModal/SignInModal";
 
 const Modal: React.FC<typeModalProps> = (props) => {
-    const {modalState, changeModalState, signUp, signIn, setCurrentUser, currentUser} = props;
+    const {modalState, changeModalState, signUp, signIn, setCurrentUser} = props;
 
     const disableModal = (): void => {
         changeModalState({

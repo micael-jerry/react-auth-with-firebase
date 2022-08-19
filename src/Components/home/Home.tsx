@@ -1,9 +1,10 @@
 import React from "react";
-import logo from '../../logo.svg';
 import './Home.css'
+import {useNavigate} from "react-router-dom";
 
 const Home: React.FC<{ currentUser: any }> = (props) => {
     const {currentUser} = props;
+    const navigate = useNavigate();
     return (
         <div className="App">
             <header className="App-header">
@@ -15,14 +16,15 @@ const Home: React.FC<{ currentUser: any }> = (props) => {
                         <p>PLEASE LOG IN OR CREATE AN ACCOUNT</p>
                     )
                 }
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
+                {
+                    !currentUser ? (
+                        <button className={"btn btn-secondary"} disabled>Private Home</button>
+                    ) : (
+                        <button className={"btn btn-secondary"} onClick={() => {
+                            navigate("/private/private-home");
+                        }}>Private Home</button>
+                    )
+                }
             </header>
         </div>
     )

@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import './SignInModal.css';
 import {typeInputSignIn, typeSign} from "../../../types";
-import {useNavigate} from "react-router-dom";
 import Google from "../../ButtonSignIn/Google";
 import Facebook from "../../ButtonSignIn/Facebook";
 import Github from "../../ButtonSignIn/Github";
@@ -14,8 +13,6 @@ const SignInModal: React.FC<{ disableModal: () => void, signIn: typeSign,setCurr
     });
 
     const [validation, setValidation] = useState<String>("");
-
-    const navigate = useNavigate();
 
     const inputChangeValue = (event: any): void => {
         let key = event.target.id;
@@ -46,7 +43,6 @@ const SignInModal: React.FC<{ disableModal: () => void, signIn: typeSign,setCurr
                 "signInEmail": "",
                 "signInPassword": ""
             })
-            navigate("/private/private-home");
             disableModal();
         } catch (err: any) {
             setValidation(err.code);

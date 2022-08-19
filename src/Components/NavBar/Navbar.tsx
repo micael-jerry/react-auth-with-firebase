@@ -1,18 +1,15 @@
 import React from "react";
-import {Link, useNavigate} from "react-router-dom";
 import {typeModalState} from "../../types";
 import {auth} from "../../firebase/firebase-config";
 import {signOut} from 'firebase/auth';
+import {Link} from "react-router-dom";
 
-const Navbar: React.FC<{ changeModalState: (param: typeModalState) => any }> = (props) => {
-    const {changeModalState} = props;
-
-    const navigate = useNavigate();
+const Navbar: React.FC<{ changeModalState: (param: typeModalState) => any, currentUser: any }> = (props) => {
+    const {changeModalState,currentUser} = props;
 
     const logOut = async () => {
         try {
             await signOut(auth);
-            navigate("/")
         } catch (err) {
             alert(err);
         }
@@ -45,20 +42,29 @@ const Navbar: React.FC<{ changeModalState: (param: typeModalState) => any }> = (
 
     return (
         <nav className={"navbar position-fixed top-0 vw-100 navbar-dark bg-dark px-4"}>
-            <Link to={"/"} className={"navbar-brand"}>Navbar</Link>
+            <Link to={"/"} className={"navbar-brand"}>FirebaseAuth</Link>
             <div>
-                <button className={"btn btn-secondary"} onClick={() => {
-                    changeModal("singUp")
-                }}>Sign Up
-                </button>
-                <button className={"btn btn-secondary ms-3"} onClick={() => {
-                    changeModal("singIn")
-                }}>Sign In
-                </button>
-                <button className={"btn btn-secondary ms-3"} onClick={() => {
-                    logOut()
-                }}>Log Out
-                </button>
+                {
+                    !currentUser ? (
+                        <>
+                            <button className={"btn btn-secondary"} onClick={() => {
+                                changeModal("singUp")
+                            }}>Sign Up
+                            </button>
+                            <button className={"btn btn-secondary ms-3"} onClick={() => {
+                                changeModal("singIn")
+                            }}>Sign In
+                            </button>
+                        </>
+                    ) : (
+                        <>
+                            <button className={"btn btn-secondary ms-3"} onClick={() => {
+                                logOut()
+                            }}>Log Out
+                            </button>
+                        </>
+                    )
+                }
             </div>
         </nav>
     )

@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import {Route, Routes} from "react-router-dom";
 import Home from "./Components/home/Home";
 import Navbar from "./Components/NavBar/Navbar";
 import Modal from "./Components/modal/Modal";
 import {typeModalState} from "./types";
 import {createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword} from 'firebase/auth';
 import {auth} from "./firebase/firebase-config";
-import Private from "./Components/pages/private/Private";
-import PrivateHome from "./Components/pages/private/privateHome/PrivateHome";
+import {Route, Routes} from "react-router-dom";
+import PrivateHome from "./Components/Private/privateHome/PrivateHome";
+import Private from "./Components/Private/Private";
 
 const App: React.FC = () => {
     const [modalState, setModalState] = useState<typeModalState>({
@@ -33,14 +33,15 @@ const App: React.FC = () => {
         <>
             {!loadingData && (
                 <>
-                    <Modal modalState={modalState} changeModalState={setModalState} signUp={signUp} signIn={signIn} currentUser={currentUser} setCurrentUser={setCurrentUser} />
-                    <Navbar changeModalState={setModalState}/>
                     <Routes>
-                        <Route path={"/"} element={<Home currentUser={currentUser} />}></Route>
+                        <Route path={"/"} element={<Home currentUser={currentUser}/>}></Route>
                         <Route path={"/private"} element={<Private currentUser={currentUser}/>}>
                             <Route path={"/private/private-home"} element={<PrivateHome/>}></Route>
                         </Route>
                     </Routes>
+                    <Modal modalState={modalState} changeModalState={setModalState} signUp={signUp} signIn={signIn}
+                           setCurrentUser={setCurrentUser}/>
+                    <Navbar changeModalState={setModalState} currentUser={currentUser}/>
                 </>
             )}
         </>
